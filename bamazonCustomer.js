@@ -16,10 +16,13 @@ var connection = mysql.createConnection({
   database: "bamazonDB"
 });
 
+
+
 connection.connect(function(err) {
   if (err) throw err;
   console.log("connected as id " + connection.threadId);
   showProducts();
+ 
   connection.end();
 });
 
@@ -32,7 +35,9 @@ function showProducts(){
         questions(data);
         
         
-    })
+    });
+
+    
 };
 
 function questions(newData){
@@ -54,23 +59,21 @@ function questions(newData){
       
     ]).then(function(response){
       let choice = response.id - 1
-      console.log(choice)
-        console.log(response);
-        
-        if (response.quantity > newData[choice].stock_quantity){
+      let actualQuantity = newData[choice].stock_quantity;
+      console.log(choice);
+      console.log(response);
+        if (response.quantity > actualQuantity){
           console.log("Insufficient quantity!");
         
-        }
+        };
+
+        if(response.quantity <= actualQuantity){
+          newQuantity = actualQuantity - response.quantity;
+          console.log(newQuantity);
+         
+        };
+      
     });
 
-
-
 };
 
-function purchase(){
-
-
-
-};
-
-// Make functions for the purchases and everything that is needed.
