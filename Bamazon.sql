@@ -28,7 +28,7 @@ INSERT INTO products(item_id, product_name, department_name, price, stock_quanti
 VALUES (5, "Toilet", "Bathroom", 69.99, 750);
 
 INSERT INTO products(item_id, product_name, department_name, price, stock_quantity)
-VALUES (6, "SmartToilet with bluetooth", "Bathroom", 999.00, 100);
+VALUES (6, "SmartToilet with bluetooth", "Bathroom", 10000.00, 100);
 
 INSERT INTO products(item_id, product_name, department_name, price, stock_quantity)
 VALUES (7, "TV", "Electronics", 99.99, 600);
@@ -41,5 +41,6 @@ VALUES (9, "HunterxHunter vol.1", "Manga", 14.99, 49);
 
 INSERT INTO products(item_id, product_name, department_name, price, stock_quantity)
 VALUES (10, "One Piece vol.1", "Manga", 14.99, 87);
+
 
 
