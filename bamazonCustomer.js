@@ -54,9 +54,9 @@ function questions(newData) {
   ]).then(function (response) {
     let choice = response.id - 1
     let actualQuantity = newData[choice].stock_quantity;
-    console.log(choice);
+    // console.log(choice);
  
-    console.log(response);
+    // console.log(response);
     if (response.quantity > actualQuantity) {
       console.log("Insufficient quantity!");
 
@@ -65,7 +65,7 @@ function questions(newData) {
     if (response.quantity <= actualQuantity) {
       newQuantity = actualQuantity - parseInt(response.quantity);
       console.log(newQuantity);
-      console.log("item id: " + response.id)
+      console.log("item id: " + response.id);
       connection.query("UPDATE products SET ? WHERE ?",
         [
           {
